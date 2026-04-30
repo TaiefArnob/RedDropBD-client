@@ -1,0 +1,68 @@
+@import "tailwindcss";
+
+@theme {
+  --color-crimson-50: #fff1f2;
+  --color-crimson-100: #ffe0e2;
+  --color-crimson-200: #ffc7cb;
+  --color-crimson-300: #ffa0a6;
+  --color-crimson-400: #ff6b74;
+  --color-crimson-500: #f83b47;
+  --color-crimson-600: #e51d2a;
+  --color-crimson-700: #c1131e;
+  --color-crimson-800: #9f131e;
+  --color-crimson-900: #84161f;
+  --color-crimson-950: #48060c;
+  --color-bone: #faf6f0;
+
+  --font-display: 'Playfair Display', Georgia, serif;
+  --font-body: 'DM Sans', system-ui, sans-serif;
+}
+
+@layer base {
+  * { box-sizing: border-box; }
+  body {
+    font-family: var(--font-body);
+    background-color: #faf6f0;
+    color: #1a0a0d;
+    -webkit-font-smoothing: antialiased;
+  }
+  h1, h2, h3, h4 {
+    font-family: var(--font-display);
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-[#c1131e] text-white font-semibold px-6 py-3 rounded-lg
+           hover:bg-[#9f131e] active:bg-[#84161f] transition-all duration-200
+           disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+  .btn-outline {
+    @apply border-2 border-[#c1131e] text-[#c1131e] font-semibold px-6 py-3
+           rounded-lg hover:bg-[#fff1f2] transition-all duration-200;
+  }
+  .input-field {
+    @apply w-full border border-stone-300 rounded-lg px-4 py-3 text-sm
+           focus:outline-none focus:ring-2 focus:ring-[#ff6b74] focus:border-transparent
+           bg-white placeholder:text-stone-400 transition-all;
+  }
+  .card {
+    @apply bg-white rounded-2xl shadow-sm border border-stone-100 p-6;
+  }
+  .badge-critical {
+    @apply text-xs font-semibold bg-red-100 text-red-700 px-2 py-1 rounded-full uppercase tracking-wide;
+  }
+  .badge-medium {
+    @apply text-xs font-semibold bg-amber-100 text-amber-700 px-2 py-1 rounded-full uppercase tracking-wide;
+  }
+  .badge-low {
+    @apply text-xs font-semibold bg-green-100 text-green-700 px-2 py-1 rounded-full uppercase tracking-wide;
+  }
+  .badge-available {
+    @apply text-xs font-semibold bg-emerald-100 text-emerald-700 px-2 py-1 rounded-full uppercase tracking-wide;
+  }
+  .blood-group-tag {
+    @apply inline-flex items-center justify-center w-12 h-12 rounded-full bg-[#c1131e]
+           text-white font-bold text-sm shadow-md;
+  }
+}
